@@ -1,7 +1,7 @@
 import axios from "axios";
 
 class UserService{
-    static BASE_URL = "http://localhost:1010"
+    static BASE_URL = "http://localhost:8081"
 
     static async login(email, password){
         try{
@@ -50,9 +50,9 @@ class UserService{
         }
     }
 
-    static async getUserById(userId, token){
+    static async getUserById(id, token){
         try{
-            const response = await axios.get(`${UserService.BASE_URL}/admin/get-users/${userId}`, 
+            const response = await axios.get(`${UserService.BASE_URL}/admin/get-user/${id}`, 
             {
                 headers: {Authorization: `Bearer ${token}`}
             })
@@ -62,9 +62,9 @@ class UserService{
         }
     }
 
-    static async deleteUser(userId, token){
+    static async deleteUser(id, token){
         try{
-            const response = await axios.delete(`${UserService.BASE_URL}/admin/delete/${userId}`, 
+            const response = await axios.delete(`${UserService.BASE_URL}/admin/delete-user/${id}`, 
             {
                 headers: {Authorization: `Bearer ${token}`}
             })
@@ -75,9 +75,9 @@ class UserService{
     }
 
 
-    static async updateUser(userId, userData, token){
+    static async updateUser(id, userData, token){
         try{
-            const response = await axios.put(`${UserService.BASE_URL}/admin/update/${userId}`, userData,
+            const response = await axios.put(`${UserService.BASE_URL}/admin/update-user/${id}`, userData,
             {
                 headers: {Authorization: `Bearer ${token}`}
             })

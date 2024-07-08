@@ -41,12 +41,12 @@ public class UserController {
         return ResponseEntity.ok(manageUserService.getUserById(id));
     }
 
-    @DeleteMapping("/admin/delete-user-user/{id}")
+    @DeleteMapping("/admin/delete-user/{id}")
     public ResponseEntity<ReqRes> deleteUser(@PathVariable Long id) {
         return ResponseEntity.ok(manageUserService.deleteUser(id));
     }
 
-    @GetMapping("/admin/update-user/{id}")
+    @PutMapping("/admin/update-user/{id}")
     public ResponseEntity<ReqRes> updateUser(@PathVariable Long id, @RequestBody User reqRes) {
         return ResponseEntity.ok(manageUserService.updateUser(id, reqRes));
     }

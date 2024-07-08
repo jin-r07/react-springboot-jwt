@@ -6,11 +6,9 @@ function RegistrationPage() {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-        name: '',
         email: '',
         password: '',
-        role: '',
-        city: ''
+        role: ''
     });
 
     const handleInputChange = (e) => {
@@ -28,11 +26,9 @@ function RegistrationPage() {
 
             // Clear the form fields after successful registration
             setFormData({
-                name: '',
                 email: '',
                 password: '',
-                role: '',
-                city: ''
+                role: ''
             });
             alert('User registered successfully');
             navigate('/admin/user-management');
@@ -48,10 +44,6 @@ function RegistrationPage() {
             <h2>Registration</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Name:</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
-                </div>
-                <div className="form-group">
                     <label>Email:</label>
                     <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
                 </div>
@@ -62,10 +54,6 @@ function RegistrationPage() {
                 <div className="form-group">
                     <label>Role:</label>
                     <input type="text" name="role" value={formData.role} onChange={handleInputChange} placeholder="Enter your role" required />
-                </div>
-                <div className="form-group">
-                    <label>City:</label>
-                    <input type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="Enter your city" required />
                 </div>
                 <button type="submit">Register</button>
             </form>

@@ -58,6 +58,7 @@ public class ManageUserService {
             var refreshToken = jwtUtil.refreshToken(new HashMap<>(), user);
             res.setStatusCode(200);
             res.setToken(jwt);
+            res.setRole(user.getRole());
             res.setRefreshToken(refreshToken);
             res.setExpirationTime("24Hrs");
             res.setMessage("User login successful");
