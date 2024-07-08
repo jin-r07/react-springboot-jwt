@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import UserService from '../service/UserService';
 
-function UpdateUser() {
+export default function UpdateUser() {
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -51,7 +51,7 @@ function UpdateUser() {
   };
 
   return (
-    <div className="auth-container">
+    <div className="container">
       <h2>Update User</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -67,5 +67,3 @@ function UpdateUser() {
     </div>
   );
 }
-
-export default UpdateUser;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserService from '../service/UserService';
 import { Link } from 'react-router-dom';
 
-function ProfilePage() {
+export default function ProfilePage() {
     const [profileInfo, setProfileInfo] = useState({});
 
     useEffect(() => {
@@ -30,5 +30,3 @@ function ProfilePage() {
         </div>
     );
 }
-
-export default ProfilePage;

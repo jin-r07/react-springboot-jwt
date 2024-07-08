@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import UserService from '../service/UserService';
 
-function UserManagementPage() {
+export default function UserManagementPage() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -37,12 +37,11 @@ function UserManagementPage() {
   return (
     <div className="user-management-container">
       <h2>Users Management Page</h2>
-      <button className='reg-button'> <Link to="/register">Add User</Link></button>
+      <button className='reg-button'><Link to="/register">Add User</Link></button>
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
             <th>Email</th>
             <th>Actions</th>
           </tr>
@@ -51,14 +50,10 @@ function UserManagementPage() {
           {users.map(user => (
             <tr key={user.id}>
               <td>{user.id}</td>
-              <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
                 <button className='delete-button' onClick={() => deleteUser(user.id)}>Delete</button>
-                <button><Link to={`/update-user/${user.id}`}>
-                  Update
-                </Link>
-                </button>
+                <button className='btn'><Link to={`/update-user/${user.id}`}> Update</Link></button>
               </td>
             </tr>
           ))}
@@ -67,5 +62,3 @@ function UserManagementPage() {
     </div>
   );
 }
-
-export default UserManagementPage;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UserService from '../service/UserService';
 import { useNavigate } from 'react-router-dom';
 
-function RegistrationPage() {
+export default function RegistrationPage() {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ function RegistrationPage() {
     };
 
     return (
-        <div className="auth-container">
+        <div className="container">
             <h2>Registration</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -60,5 +60,3 @@ function RegistrationPage() {
         </div>
     );
 }
-
-export default RegistrationPage;
